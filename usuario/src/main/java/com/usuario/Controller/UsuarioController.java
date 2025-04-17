@@ -57,7 +57,8 @@ private final UsuarioService usuarioService;
 		}
 	}
 	
-	@DeleteMapping("/")
+	@DeleteMapping("/{id}")
+	
 	public ResponseEntity<String> deleteUsuario(@PathVariable Long id){
 		boolean deleted = usuarioService.deleteUsuario(id);
 		if(deleted) {
