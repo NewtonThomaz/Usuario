@@ -47,7 +47,7 @@ private final UsuarioService usuarioService;
 		return ResponseEntity.status(HttpStatus.CREATED).body(criarUsuario);
 	}
 	
-	@PutMapping("/")
+	@PutMapping("/{id}")
 	public ResponseEntity<Usuario> alteraUsuario(@PathVariable Long id, @RequestBody Usuario usuario){
 		Usuario alteraUsuario = usuarioService.alteraUsuario(id, usuario);
 		if(alteraUsuario != null) {
